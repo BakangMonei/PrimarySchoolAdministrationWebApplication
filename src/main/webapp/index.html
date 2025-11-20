@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary School Experience OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11/dist/framer-motion.umd.js"></script>
+    <style>
+        body {
+            background: radial-gradient(circle at top, rgba(59,130,246,0.2), transparent 50%),
+            radial-gradient(circle at 20% 20%, rgba(16,185,129,0.15), transparent 45%),
+            linear-gradient(135deg, #030712, #020617);
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(32px);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-white">
+<div class="absolute inset-0 pointer-events-none">
+    <div class="absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-sky-500/40"></div>
+</div>
+
+<div class="relative z-10">
+    <header class="mx-auto max-w-6xl px-6 py-8 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-xl font-semibold">PS</div>
+            <div>
+                <p class="text-xs uppercase tracking-[0.5em] text-slate-300">Kgetsi Primary</p>
+                <p class="text-base font-semibold text-white">Administration Portal</p>
+            </div>
+        </div>
+        <nav class="flex items-center gap-4 text-sm text-slate-200">
+            <a href="dashboard" class="hover:text-white transition">Dashboard</a>
+            <a href="auth/login"
+               class="rounded-full bg-white text-slate-900 px-4 py-2 font-semibold shadow shadow-sky-500/40 hover:bg-slate-100 transition">
+                Sign In
+            </a>
+        </nav>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-6 pb-20">
+        <section class="grid gap-12 lg:grid-cols-2 items-center">
+            <div class="space-y-8">
+                <span class="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-1 text-xs uppercase tracking-[0.4em] text-slate-300">
+                    <span class="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    Live Campus OS
+                </span>
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-semibold leading-tight text-white">
+                        Operational excellence for schools that care about every learner.
+                    </h1>
+                    <p class="mt-4 text-lg text-slate-200">
+                        Manage admissions, teachers, classes, guardians, and academic intelligence from a single
+                        Jakarta EE stack powered by Servlets, JSP, JavaBeans, and JDBC.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-4">
+                    <a href="dashboard"
+                       class="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-sky-400 via-sky-500 to-blue-500 px-6 py-3 text-lg font-semibold text-white shadow-xl shadow-sky-500/40 hover:brightness-110 transition">
+                        Launch Console <span class="text-2xl">↗</span>
+                    </a>
+                    <a href="auth/login"
+                       class="inline-flex items-center gap-3 rounded-2xl border border-white/20 px-6 py-3 text-lg font-semibold text-white hover:bg-white/10 transition">
+                        Sign In
+                    </a>
+                </div>
+                <dl class="grid grid-cols-3 gap-6 text-sm text-slate-300">
+                    <div>
+                        <dt class="text-3xl font-semibold text-white">1.2k+</dt>
+                        <dd>Learners onboard</dd>
+                    </div>
+                    <div>
+                        <dt class="text-3xl font-semibold text-white">86</dt>
+                        <dd>Active educators</dd>
+                    </div>
+                    <div>
+                        <dt class="text-3xl font-semibold text-white">18</dt>
+                        <dd>Parent cohorts</dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="rounded-3xl glass p-6 border border-white/10 shadow-2xl shadow-sky-500/20">
+                <div class="grid gap-5" id="featureCards">
+                    <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                        <p class="text-xs uppercase tracking-[0.3em] text-slate-300">Students</p>
+                        <h2 class="text-xl font-semibold text-white mt-2">Holistic Learner Profiles</h2>
+                        <p class="text-sm text-slate-200 mt-2">Auto-calculated averages, attendance intelligence, and
+                            class-ready transfers.</p>
+                    </article>
+                    <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                        <p class="text-xs uppercase tracking-[0.3em] text-slate-300">Teachers</p>
+                        <h2 class="text-xl font-semibold text-white mt-2">Teaching Blueprint</h2>
+                        <p class="text-sm text-slate-200 mt-2">Allocate educators, verify qualifications, and balance
+                            subjects with visual load charts.</p>
+                    </article>
+                    <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                        <p class="text-xs uppercase tracking-[0.3em] text-slate-300">Parents</p>
+                        <h2 class="text-xl font-semibold text-white mt-2">Guardian Compass</h2>
+                        <p class="text-sm text-slate-200 mt-2">Give families curated access to grades, notes, and teacher
+                            feedback loops.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-20 grid gap-8 lg:grid-cols-3">
+            <div class="rounded-2xl glass border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.4em] text-slate-300">Jakarta EE</p>
+                <h3 class="text-xl font-semibold text-white mt-2">Servlets · JSP · JSTL</h3>
+                <p class="text-sm text-slate-300 mt-3">DAO pattern, bean validations, and connection utilities yield clean,
+                    testable MVC flows.</p>
+            </div>
+            <div class="rounded-2xl glass border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.4em] text-slate-300">Security</p>
+                <h3 class="text-xl font-semibold text-white mt-2">Sessions · Cookies · RBAC</h3>
+                <p class="text-sm text-slate-300 mt-3">Remember-me tokens, bcrypt hashing, filters, and role-aware routing
+                    protect every endpoint.</p>
+            </div>
+            <div class="rounded-2xl glass border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.4em] text-slate-300">Experience</p>
+                <h3 class="text-xl font-semibold text-white mt-2">Tailwind + Framer Motion</h3>
+                <p class="text-sm text-slate-300 mt-3">Responsive grids, animated cards, and progressive disclosure tuned
+                    for multi-device use.</p>
+            </div>
+        </section>
+
+        <section class="mt-14 grid gap-6 md:grid-cols-2">
+            <div class="rounded-2xl glass border border-white/10 p-6">
+                <p class="text-sm uppercase tracking-[0.3em] text-slate-300">Class Roster Snapshot</p>
+                <div class="mt-4 space-y-4 text-sm text-slate-200">
+                    <div class="flex items-center justify-between">
+                        <span>Standard 1</span><span class="text-emerald-300">24 learners</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Standard 4</span><span class="text-amber-300">28 learners</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Standard 7</span><span class="text-sky-300">31 learners</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-2xl glass border border-white/10 p-6">
+                <p class="text-sm uppercase tracking-[0.3em] text-slate-300">Term Pipeline</p>
+                <ul class="mt-4 space-y-3 text-sm text-slate-200">
+                    <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-sky-400"></span>Capture mid-term
+                        marks</li>
+                    <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-amber-400"></span>Publish
+                        guardian alerts</li>
+                    <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Release
+                        progress dashboards</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/10">
+        <div class="mx-auto max-w-6xl px-6 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-400 gap-4">
+            <span>&copy; 2025 Kgetsi Primary School – Crafted for CSE303.</span>
+            <span>Advanced Web Development · Pure Jakarta EE Stack</span>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const { animate } = window.framerMotion;
+    document.querySelectorAll('#featureCards article').forEach((card, index) => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(30px)';
+        animate(card, {opacity: 1, transform: 'translateY(0px)'}, {delay: index * 0.12, duration: 0.6, easing: 'easeOut'});
+    });
+</script>
+</body>
+</html>
