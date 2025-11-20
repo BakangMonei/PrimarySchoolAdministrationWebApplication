@@ -7,11 +7,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Objects;
 
-/**
- * Lightweight connection pool using the MySQL {@link MysqlConnectionPoolDataSource}.
- * Falls back to sensible defaults but allows overrides via system properties or environment variables:
- * DB_URL, DB_USERNAME, DB_PASSWORD.
- */
 public final class DBConnectionPool {
 
     private static final DataSource DATA_SOURCE = initialize();
@@ -27,11 +22,12 @@ public final class DBConnectionPool {
         MysqlConnectionPoolDataSource ds = new MysqlConnectionPoolDataSource();
         ds.setURL(resolve("DB_URL", "jdbc:mysql://localhost:3306/primary_school?useSSL=false&serverTimezone=UTC"));
         ds.setUser(resolve("DB_USERNAME", "school_admin"));
-        ds.setPassword(resolve("DB_PASSWORD", "changeMe123!"));
+        ds.setPassword(resolve("DB_PASSWORD", "Password@12345"));
         try {
             ds.setAllowMultiQueries(true);
+            ds.setAllowPublicKeyRetrieval(true);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to configure MySQL datasource security options", e);
         }
         return ds;
     }
